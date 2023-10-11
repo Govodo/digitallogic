@@ -31,7 +31,5 @@ func NewBit(state bool) Bit {
 }
 
 func MakeNewBit(state bool) *Bit {
-	bit := new(Bit)
-	bit = &Bit{State: state}
-	return bit
+	return &Bit{State: state}
 }
