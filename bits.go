@@ -29,3 +29,9 @@ func (bit *Bit) GetBit() bool {
 func NewBit(state bool) Bit {
 	return Bit{State: state}
 }
+
+func MakeNewBit(state bool) *Bit {
+	bit := new(Bit)
+	bit = &Bit{State: state}
+	return bit
+}
