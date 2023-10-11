@@ -56,3 +56,15 @@ func TestBit_Nand(t *testing.T) {
 	}
 
 }
+
+func TestBit_Not(t *testing.T) {
+
+	a := NewBit(true)
+
+	b := a.Not()
+	
+	if b.GetBit() {
+		t.Error("Not does not equal 0 when input is 1")
+	}
+
+}
