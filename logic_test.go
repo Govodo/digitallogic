@@ -62,9 +62,57 @@ func TestBit_Not(t *testing.T) {
 	a := NewBit(true)
 
 	b := a.Not()
-	
+
 	if b.GetBit() {
 		t.Error("Not does not equal 0 when input is 1")
 	}
+
+}
+
+func TestBit_Xor(t *testing.T) {
+
+	t.Run("XOR a: 1, b: 1", func(t *testing.T) {
+		a := NewBit(true)
+		b := NewBit(true)
+
+		c := a.Xor(&b)
+
+		if c.GetBit() {
+			t.Error("XOR does not equal 0 when a is 1 and b is 1")
+		}
+	})
+
+	t.Run("XOR a: 0, b: 0", func(t *testing.T) {
+		a := NewBit(false)
+		b := NewBit(false)
+
+		c := a.Xor(&b)
+
+		if c.GetBit() {
+			t.Error("XOR does not equal 0 when a is 0 and b is 0")
+		}
+	})
+
+	t.Run("XOR a: 1, b: 0", func(t *testing.T) {
+		a := NewBit(true)
+		b := NewBit(false)
+
+		c := a.Xor(&b)
+
+		if !c.GetBit() {
+			t.Error("XOR does not equal 1 when a is 1 and b is 0")
+		}
+	})
+
+	t.Run("XOR a: 0, b: 1", func(t *testing.T) {
+		a := NewBit(false)
+		b := NewBit(true)
+
+		c := a.Xor(&b)
+
+		if !c.GetBit() {
+			t.Error("XOR does not equal 1 when a is 0 and b is 1")
+		}
+	})
 
 }

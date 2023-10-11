@@ -29,3 +29,12 @@ func (a *Bit) Nand(b *Bit) *Bit {
 func (a *Bit) Not() *Bit {
 	return MakeNewBit(!a.GetBit())
 }
+
+// XOR
+
+func (a *Bit) Xor(b *Bit) *Bit {
+	c := a.And(b.Not())
+	d := b.And(a.Not())
+	e := c.Or(d)
+	return e
+}
