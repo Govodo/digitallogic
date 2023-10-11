@@ -38,3 +38,9 @@ func (a *Bit) Xor(b *Bit) *Bit {
 	e := c.Or(d)
 	return e
 }
+
+// NXOR
+
+func (a *Bit) Nxor(b *Bit) *Bit {
+	return a.Xor(b).Not()
+}
