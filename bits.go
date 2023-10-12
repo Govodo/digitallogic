@@ -6,16 +6,12 @@ type Bit struct {
 
 type Byte = [8]Bit
 
-func (bit *Bit) ToString() string {
+func (bit *Bit) String() string {
 	if bit.State {
 		return "1"
 	} else {
 		return "0"
 	}
-}
-
-func (bit *Bit) String() string {
-	return bit.ToString()
 }
 
 func (bit *Bit) SetBit(state bool) {

@@ -22,12 +22,12 @@ func Test_MakeNewBit(t *testing.T) {
 
 }
 
-func TestBit_ToString(t *testing.T) {
+func TestBit_String(t *testing.T) {
 
 	bit := NewBit(true)
 
-	if bit.ToString() != "1" {
-		t.Error("bit.ToString() does not equal 1")
+	if bit.String() != "1" {
+		t.Error("bit.String() does not equal 1")
 	}
 
 }
