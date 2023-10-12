@@ -4,7 +4,9 @@ type Bit struct {
 	State bool
 }
 
-type Byte = [8]Bit
+const BITS_IN_A_BYTE int = 8
+
+type Byte = [BITS_IN_A_BYTE]Bit
 
 func (bit *Bit) String() string {
 	if bit.State {
